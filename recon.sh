@@ -2,6 +2,7 @@
 source ./scan.lib
 
 PATH_TO_DIRSEARCH="/home/arthur/arthur/Projects/dirsearch"
+
 while getopts "m:i" OPTION; do
     case $OPTION in 
         m)
@@ -17,10 +18,10 @@ done
 
 
 scan_domain(){
-   DOMAIN=$i
+   DOMAIN=$1
    DIRECTORY=${DOMAIN}_recon
-   echo " creating drectory $DIRECTORY"
-   mkdir $DIRECTORY
+   echo -e "\n \t \t ************** \n \t \t creating drectory $DIRECTORY \n \t \t ************** \n "
+   mkdir -p $DIRECTORY
     case $MODE in 
        nmap-only)
            nmap_scan
@@ -39,37 +40,40 @@ scan_domain(){
    esac
 }
 report_domain(){
-   echo "Creating recon report for $DOMAIN ..."
+    DOMAIN=$1
+   echo -e "\n \t \t ************** \n \t \t Creating recon report for $DOMAIN ...\n \t \t ************** \n"
    TODAY=$(date)
-   echo "created at $TODAY" > $DIRECTORY/report
+   echo -e "\n \t \t ************** \n \t \t created at $TODAY \n \t \t ************** \n " > $DIRECTORY/report
    if [    -f $DIRECTORY/nmap  ];then
-       echo "Results for Nmap:" >> $DIRECTORY/report
-       grep -E "^\s*\S+\s+\S+\s+\S+\s*$"   $DIRECTORY/nmap >> $DIRECTORY/report
+       echo -e "\n \t \t ************** \n \t \t Results for Nmap: \n \t \t ************** \n" >> $DIRECTORY/report
+       grep -P -i "([A-Za-z0-9]+(\s+[A-Za-z0-9]+)+)"   $DIRECTORY/nmap >> $DIRECTORY/report
    fi
    if [    -f $DIRECTORY/dirsearch  ];then
-       echo "Results for Dirsearch:" >> $DIRECTORY/report
-       cat $DIRECTORY/dirsearch >> $DIRECTORY/report
+       echo -e "\n \t \t ************** \n \t \tResults for Dirsearch: \n \t \t ************** \n" >> $DIRECTORY/report
+       jq -r ".results[] | select(.status >= 200 and .status <= 399) | .url " $DIRECTORY/dirsearch >> $DIRECTORY/report
    fi
    if [    -f $DIRECTORY/crt  ];then
-       echo "Results for crt.sh:" >> $DIRECTORY/report
-       jq -r ".[] | .name_value" $DIRECTORY/crt    >>  $DIRECTORY/report
+       echo -e "\n \t \t ************** \n \t \t Results for crt.sh: \n \t \t ************** \n" >> $DIRECTORY/report
+       jq -r ".[] | .name_value " $DIRECTORY/crt  | sort | uniq >>  $DIRECTORY/report
    fi
 
 }
 
-if [ $INTERACTIVE ]; then
+if [ "$INTERACTIVE" ];then
     INPUT="BLANK"
-    while [$INPUT != "quit" ]; do 
-        echo "Please enter a porroo Domain !"
-        read INPUT
-        if [ $INPUT != "quit" ];then
-        scan_domain $INPUT
-        report_domain $INPUT
+    echo -e "\n \t \t ************** \n hi.I'm milad.Welcome to my Recon Script.Press enter to continue... \n \t \t ************** \n"
+    read INPUT
+    while [ "$INPUT" != "quit" ]; do 
+        echo  -e "\n \t \t ************** \n \t \t Please enter a Domain \n \t \t ************** \n"
+        read  INPUT
+        if [ "$INPUT" != "quit" ];then
+            scan_domain $INPUT
+            report_domain $INPUT
         fi
     done
 else
     for i in "${@:$OPTIND:$#}";do
-        scan_domain $i
-        report_domain $i
+        scan_domain "$i"
+        report_domain "$i"
     done
 fi
