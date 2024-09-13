@@ -1,5 +1,6 @@
 #!/bin/bash
 source ./scan.lib
+
 PATH_TO_DIRSEARCH="/home/arthur/arthur/Projects/dirsearch"
 while getopts "m:i" OPTION; do
     case $OPTION in 

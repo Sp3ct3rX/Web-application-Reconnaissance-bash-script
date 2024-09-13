@@ -1,19 +1,19 @@
 #!bin/bash
 nmap_scan()
 {
-    nmap $DOMAIN . $DIRECTORY/nmap
+    nmap $DOMAIN  $DIRECTORY/nmap
     echo "  DING DING the report of nmap scan are stored in $DIRECTORY/nmap."
 
 }
 dirsearch_scan()
 {
-    $PATH_TO_DIRSEARCH/dirsearch.py -u $DOMAIN -e php --simple-report=$DIRECTORY/dirsearch
-    echo "  DING DING the report of dirsearch are stored in $DIRECTORY/dirsearch
+    python $PATH_TO_DIRSEARCH/dirsearch.py -u $DOMAIN -e php -o $DIRECTORY/dirsearch --format=json
+    echo "  DING DING the report of dirsearch are stored in $DIRECTORY/dirsearch"
 
 }
 
 crt_scan()
 {
     curl    "https://crt.sh/?q=$DOMAIN&output=json" -o $DIRECTORY/crt
-    echo "  DING DING the report of crt scan are stored in $DIRECTORY/crt
+    echo "  DING DING the report of crt scan are stored in $DIRECTORY/crt"
 }
