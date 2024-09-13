@@ -50,7 +50,7 @@ report_domain(){
    fi
    if [    -f $DIRECTORY/dirsearch  ];then
        echo -e "\n \t \t ************** \n \t \tResults for Dirsearch: \n \t \t ************** \n" >> $DIRECTORY/report
-       jq -r ".results[] | select(.status >= 200 and .status <= 399) | .url " $DIRECTORY/dirsearch >> $DIRECTORY/report
+       jq -r ".results[] | select(.status >= 200 and .status <= 399)" $DIRECTORY/dirsearch >> $DIRECTORY/report
    fi
    if [    -f $DIRECTORY/crt  ];then
        echo -e "\n \t \t ************** \n \t \t Results for crt.sh: \n \t \t ************** \n" >> $DIRECTORY/report
