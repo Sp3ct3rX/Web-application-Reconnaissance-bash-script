@@ -85,7 +85,7 @@ PORT    STATE  SERVICE    VERSION
 ## 📬 Contact
 
 Freelancer Profile: [sp3ct3rx on Freelancer](https://www.freelancer.com/u/sp3ct3rx)  
-Telegram (optional): `@YourHandle`  
+Telegram (optional): `@sp3ct3rx`  
 GitHub (optional): `https://github.com/sp3ct3rx`
 
 ---
