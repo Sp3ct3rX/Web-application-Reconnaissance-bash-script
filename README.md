@@ -1,4 +1,4 @@
-# 🛠 MiladRecon 2.0
+# 🛠 Web-application-Reconnaissance-bash-script
 **Bash-based Recon Automation Toolkit for Bug Bounty & Pentesters**  
 _Created by: `sp3ct3rx`_
 
