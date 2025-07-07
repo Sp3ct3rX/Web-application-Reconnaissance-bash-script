@@ -6,7 +6,7 @@ _Created by: `sp3ct3rx`_
 
 ## 📌 Overview
 
-MiladRecon is a modular recon automation script written in Bash, built for penetration testers and bug bounty hunters who want fast, clean, and customizable scans.
+Web-application-Reconnaissance-bash-script is a modular recon automation script written in Bash, built for penetration testers and bug bounty hunters who want fast, clean, and customizable scans.
 
 It combines the power of:
 - `Nmap` for port scanning
