@@ -1,95 +1,83 @@
-# 🛠 Web-application-Reconnaissance-bash-script
-**Bash-based Recon Automation Toolkit for Bug Bounty & Pentesters**  
-_Created by: `sp3ct3rx`_
+<h1 align="center">
+  🕵️ Web Application Reconnaissance — Bash Script
+</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-Bash-%2300ff88?style=for-the-badge&logo=gnu-bash&logoColor=white" />
+  <img src="https://img.shields.io/badge/Recon-Tool-%239f7aea?style=for-the-badge&logo=linux" />
+  <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20WSL-darkgreen?style=for-the-badge&logo=linux&logoColor=white" />
+</p>
 
 ---
 
-## 📌 Overview
+## 🔍 Overview
 
-Web-application-Reconnaissance-bash-script is a modular recon automation script written in Bash, built for penetration testers and bug bounty hunters who want fast, clean, and customizable scans.
-
-It combines the power of:
-- `Nmap` for port scanning
-- `Dirsearch` for content discovery
-- `crt.sh` via `curl` for certificate-based subdomain enumeration
-
-The tool generates structured output and compiles everything into a Markdown report.
+`Web-application-Reconnaissance-bash-script` is a modular and lightweight reconnaissance toolkit built in pure Bash. It automates the recon phase of web application penetration testing with real-world tools and techniques.
 
 ---
 
-## 🔧 Features
+## ⚙️ Features
 
-- 🧩 **Modular Scan Modes:** Choose from `nmap-only`, `dirsearch-only`, `crt-only`, or full scan  
-- 🧠 **Interactive CLI:** Smart prompt for multiple domains  
-- 📄 **Markdown Reports:** Clean recon report generation  
-- ⚙️ **Lightweight & Extendable:** Just Bash + Python + curl
-
----
-
-## 💻 Dependencies
-
-- `nmap`
-- `python` (for dirsearch)
-- `curl`
-- `jq` (for parsing JSON output)
+- 🔍 **Nmap scan** – Ports & services detection  
+- 📂 **Dirsearch scan** – Directory brute-force using extensions and recursion  
+- 🌐 **crt.sh parsing** – Subdomain enumeration via public certificate transparency logs  
+- 📝 **Auto report generation** – All results structured in a clean format
 
 ---
 
-## 🚀 How to Use
+## 🎯 Why This Tool?
+
+- No Python/Go/Node required — just pure Bash.
+- Fully customizable.
+- Perfect for quick recon, CTFs, and bug bounty automation.
+
+---
+
+## 📦 Tools Used
+
+- `nmap`  
+- `dirsearch` (Python tool called inside script)  
+- `curl`  
+- `jq` (for formatting JSON output)
+
+---
+
+## 🚀 Quick Start
 
 ```bash
-# Interactive mode
+git clone https://github.com/sp3ct3rx/Web-application-Reconnaissance-bash-script.git
+cd Web-application-Reconnaissance-bash-script
+chmod +x recon.sh scan.lib
 ./recon.sh -i
-
-# Non-interactive mode (default: full scan)
-./recon.sh example.com
-
-# Specific scan
-./recon.sh -m nmap-only example.com
-```
-
-> All outputs are saved in a folder named: `example.com_recon/`
-
----
-
-## 📂 Folder Structure
-
-```
-example.com_recon/
-├── nmap         -> nmap scan result
-├── dirsearch    -> dirsearch output (JSON)
-├── crt          -> raw output from crt.sh
-└── report       -> markdown formatted final report
 ```
 
 ---
 
-## 🖼 Sample Output
+## 📁 Output Sample
 
-```bash
-PORT    STATE  SERVICE    VERSION
-22/tcp  open   ssh        OpenSSH 7.6p1 Ubuntu
-80/tcp  open   http       Apache httpd 2.4.29
-```
-
----
-
-## 🔐 Use Cases
-
-- Fast recon before manual exploitation  
-- Automating initial phases of bug bounty hunting  
-- Supplementing penetration testing engagements
+The tool will create a `{DOMAIN}_recon` folder and store:
+- `nmap` results
+- `dirsearch` JSON output
+- `crt.sh` subdomains
+- A final `report` file with filtered and readable data
 
 ---
 
-## 📬 Contact
+## 📸 Screenshots
 
-Freelancer Profile: [sp3ct3rx on Freelancer](https://www.freelancer.com/u/sp3ct3rx)  
-Telegram (optional): `@sp3ct3rx`  
-GitHub (optional): `https://github.com/sp3ct3rx`
+*(Add some screenshots here of the terminal in action!)*
 
 ---
 
-## ⚠️ License
+## ☠️ Author
 
-MIT – Free to modify and distribute.
+**Milad (sp3ct3rx)**  
+🔗 [GitHub Profile](https://github.com/sp3ct3rx)  
+📬 Telegram: `@sp3ct3rxx`  
+📎 Freelancer: [freelancer.com/u/sp3ct3rx](https://freelancer.com/u/sp3ct3rx)
+
+---
+
+## ⭐️ Star This Repo
+
+If this script helped you or saved your time during recon, please consider giving it a ⭐️ — it motivates me to release more tools for the community.
