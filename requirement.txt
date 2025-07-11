@@ -1,0 +1,14 @@
+# Bash script dependencies for Web Application Reconnaissance
+
+# CLI tools (must be installed on system)
+nmap
+curl
+jq
+
+# Python tool (requires Python 3.x)
+python3
+
+# External tool (clone manually)
+dirsearch  # https://github.com/maurosoria/dirsearch
+
+# Optional: Add to PATH or specify the dirsearch path inside scan.lib
