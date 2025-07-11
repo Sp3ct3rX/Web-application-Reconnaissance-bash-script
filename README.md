@@ -1,83 +1,74 @@
 <h1 align="center">
-  🕵️ Web Application Reconnaissance — Bash Script
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=800&color=00FF88&center=true&vCenter=true&width=600&lines=Web+Application+Reconnaissance;Automated+Recon+Script+in+Bash;for+Pentesters+and+Bug+Bounty+Hunters" alt="Typing SVG" />
 </h1>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Language-Bash-%2300ff88?style=for-the-badge&logo=gnu-bash&logoColor=white" />
-  <img src="https://img.shields.io/badge/Recon-Tool-%239f7aea?style=for-the-badge&logo=linux" />
-  <img src="https://img.shields.io/badge/Platform-Linux%20%7C%20WSL-darkgreen?style=for-the-badge&logo=linux&logoColor=white" />
+  <img src="https://img.shields.io/badge/Language-Bash-%2300ff88?style=for-the-badge&logo=gnubash&logoColor=white" />
+  <img src="https://img.shields.io/badge/Tools-Nmap%20%7C%20Dirsearch%20%7C%20crt.sh-%239f7aea?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Platform-Linux-darkgreen?style=for-the-badge&logo=linux" />
 </p>
 
 ---
 
-## 🔍 Overview
+## 🔍 English Description
 
-`Web-application-Reconnaissance-bash-script` is a modular and lightweight reconnaissance toolkit built in pure Bash. It automates the recon phase of web application penetration testing with real-world tools and techniques.
+This is a modular, lightweight, and fully automated **reconnaissance script written in Bash** designed for **web application penetration testing**.
 
----
+### 🚀 Features:
+- 🔎 Nmap port & service scan  
+- 🧭 Dirsearch brute-force on directories and files  
+- 🛰 Subdomain extraction from crt.sh  
+- 📄 Clean and structured recon report (TXT format)  
+- 🧩 Mode selection (nmap-only, dirsearch-only, full)
 
-## ⚙️ Features
+### 💡 Use Case:
+Ideal for:
+- Bug bounty hunters  
+- Ethical hackers  
+- Cybersecurity students
 
-- 🔍 **Nmap scan** – Ports & services detection  
-- 📂 **Dirsearch scan** – Directory brute-force using extensions and recursion  
-- 🌐 **crt.sh parsing** – Subdomain enumeration via public certificate transparency logs  
-- 📝 **Auto report generation** – All results structured in a clean format
+### 📦 Requirements:
+- `nmap`, `curl`, `jq`, `python3`
+- dirsearch (pre-downloaded)
 
----
-
-## 🎯 Why This Tool?
-
-- No Python/Go/Node required — just pure Bash.
-- Fully customizable.
-- Perfect for quick recon, CTFs, and bug bounty automation.
-
----
-
-## 📦 Tools Used
-
-- `nmap`  
-- `dirsearch` (Python tool called inside script)  
-- `curl`  
-- `jq` (for formatting JSON output)
+📎 Source code and usage guide:  
+➡️ [Web-application-Reconnaissance-bash-script](https://github.com/sp3ct3rx/Web-application-Reconnaissance-bash-script)
 
 ---
 
-## 🚀 Quick Start
+## 🇮🇷 توضیحات فارسی
 
-```bash
-git clone https://github.com/sp3ct3rx/Web-application-Reconnaissance-bash-script.git
-cd Web-application-Reconnaissance-bash-script
-chmod +x recon.sh scan.lib
-./recon.sh -i
-```
+ابزاری قدرتمند برای شناسایی و جمع‌آوری اطلاعات اولیه از اپلیکیشن‌های وب به زبان **Bash**. مناسب برای تست نفوذ و باگ‌بانتی.
+
+### 🎯 امکانات:
+- اسکن پورت و سرویس با Nmap  
+- کشف مسیرهای پنهان با Dirsearch  
+- استخراج ساب‌دامین از crt.sh  
+- تولید گزارش نهایی کامل  
+- قابلیت اجرای ماژولار (فقط nmap، فقط dirsearch و...)
+
+🧠 مناسب برای:
+- شکارچی‌های باگ  
+- دانشجویان امنیت سایبری  
+- علاقه‌مندان به تست نفوذ
 
 ---
 
-## 📁 Output Sample
+## 🎥 Demo & Visuals
 
-The tool will create a `{DOMAIN}_recon` folder and store:
-- `nmap` results
-- `dirsearch` JSON output
-- `crt.sh` subdomains
-- A final `report` file with filtered and readable data
+<p align="center">
+  <img src="https://github.com/sp3ct3rx/Web-application-Reconnaissance-bash-script/assets/demo-terminal.gif" width="600" alt="demo" />
+</p>
 
 ---
 
 ## 📸 Screenshots
 
-*(Add some screenshots here of the terminal in action!)*
+> 📁 Terminal execution  
+> 📄 Report output sample  
+> ⚙️ Project structure
 
 ---
 
-## ☠️ Author
-
-**Milad (sp3ct3rx)**  
-🔗 [GitHub Profile](https://github.com/sp3ct3rx)  
-📬 Telegram: `@sp3ct3rxx`  
-📎 Freelancer: [freelancer.com/u/sp3ct3rx](https://freelancer.com/u/sp3ct3rx)
-
----
-
-## ⭐️ Star This Repo
-
-If this script helped you or saved your time during recon, please consider giving it a ⭐️ — it motivates me to release more tools for the community.
+## ⭐️ Star it if you find it useful!  
+**Contributions are welcome. Feel free to fork or open issues.**
