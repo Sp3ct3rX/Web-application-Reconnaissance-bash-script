@@ -1,4 +1,4 @@
-#!bin/bash
+#/!bin/bash
 nmap_scan()
 {
     touch $DIRECTORY/nmap
@@ -8,7 +8,7 @@ nmap_scan()
 }
 dirsearch_scan()
 {
-    python $/home/arthur/Desktop/recon/dirsearch/dirsearch.py -u $DOMAIN -e php,html,js,asp,bak,zip,tgz,txt -o $DIRECTORY/dirsearch --format=json  -r --max-recursion-depth 3 --recursion-status 200-399 -t 40
+    dirsearch -u $DOMAIN -e php,html,js,asp,bak,zip,tgz,txt -o $DIRECTORY/dirsearch --format=json  -r --max-recursion-depth 3 --recursion-status 200-399 -t 40
     echo "  DING DING the report of dirsearch are stored in $DIRECTORY/dirsearch"
 
 }
